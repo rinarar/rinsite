@@ -1,313 +1,176 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>RiniDisc</title>
 <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
 <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 <link rel="icon" type="image/x-icon" href="fav.png">
+<title>RiniDisc</title>
 <style>
-
-
-  @media (prefers-color-scheme: dark) {
-    p {
-        max-width:900px;
-        width:100%;
-        height:100%;
-        text-align: justify;
-        margin: 10px;
-        font-family: 'Noto', sans-serif;
-        font-weight: normal;
-        color: #7a9b9e;
-    }
-    h1 {
-      font-family: 'Lato', sans-serif;
-      font-weight: bold;
-      letter-spacing: 0px;
-      line-height: 50px;
-      font-size: 60px;
-      margin:0px;
-      color:white;
-    }
-    body {
-        background-color:#121517;
-    }
-    div#container {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 48px;
-        padding-right: 48px;
-        color: #7a9b9e;
-        margin:-10px;
-        background: radial-gradient(#23282c, #0c0d0e);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        font-family: Trebuchet MS;
-        font-size: 13pt;
-        }
-        .navhome {
-      font-family: 'Lato', sans-serif;
-      color:white;
-      font-weight: bold;
-      letter-spacing: 0px;
-      line-height: 50px;
-      font-size: 24px;
-      margin-bottom:12px;
-    }
-    .nav {
+  body {
+    background-color:#121517;
+    margin:0px;
+  }
+  div#body {
+    background: radial-gradient(#23282c, #0c0d0e);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width:100%;
+    margin:0px;
+    min-height: 1000px;
+  }
+  div#container {
+    max-width:900px;
+    width:100%;
+    margin: auto;
+    vertical-align:top;
+    border-radius: 35px;
+    padding-top:15px;
+    padding-left:48px;
+    padding-right:48px;
+  }
+  .img_slideshow {
+    width:100%;
+    object-fit: cover;
+    aspect-ratio : 2 / 1.2;
+  }
+  .img_pfp {
+    border-radius: 100px;
+    border-radius: 0px;
+    height:100px;
+    width:auto;
+  }
+  .img_gallery {
+    width:100%;
+    max-width: 500px;
+  }
+  .img_page { 
+    width:100%;
+    width:250px;
+  }
+  h1 {
+    font-family: 'Lato-black', sans-serif;
+    letter-spacing: 0px;
+    line-height: 50px;
+    font-size: 60px;
+    margin:0px;
+    color:white;
+  }
+  h2 {
+    font-family: Futura;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    color: #606468;
+    background: linear-gradient(#818689,#4d5155);
+    /* clip hackery */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 48px;
+    margin:0px;
+    margin-left:20px;
+  }
+  p {
+    max-width:900px;
+    width:100%;
+    height:100%;
+    text-align: justify;
+    margin: 10px;
+    font-family: 'Noto', sans-serif;
+    font-weight: normal;
+    color: #7a9b9e;
+  }
+  th, td { font-size: 12pt; font-weight: normal;}
+  .navtitle {
       font-family: 'Lato', sans-serif;
       color:#7a9b9e;
       font-weight: bold;
       letter-spacing: 0px;
       line-height: 50px;
       font-size: 24px;
-      margin-left:15px;
+      margin-right:15px;
       margin-bottom:12px;
-    }
   }
-  @media (prefers-color-scheme: light) {
-    p {
-        max-width:900px;
-        width:100%;
-        height:100%;
-        text-align: justify;
-        margin: 10px;
-        font-family: 'Noto', sans-serif;
-        font-weight: normal;
-        color: #23282c;
-    }
-    h1 {
-      font-family: 'Lato', sans-serif;
-      color:#23282c;
-      font-weight: bold;
-      letter-spacing: 0px;
-      line-height: 50px;
-      font-size: 60px;
-      margin:0px;
-    }
-    body {
-        background-color:white;
-    }
-    div#container {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 48px;
-        padding-right: 48px;
-        color: #23282c;
-        margin:-10px;
-        font-family: Trebuchet MS;
-        font-size: 13pt;
-        }
-        .navhome {
-      font-family: 'Lato', sans-serif;
-      color:black;
-      font-weight: bold;
-      letter-spacing: 0px;
-      line-height: 50px;
-      font-size: 24px;
-      margin-bottom:12px;
-    }
-    .nav {
-      font-family: 'Lato', sans-serif;
-      color:#64676a;
-      font-weight: bold;
-      letter-spacing: 0px;
-      line-height: 50px;
-      font-size: 24px;
-      margin-left:15px;
-      margin-bottom:12px;
-    }
+  a { text-decoration: none;}
+  * { box-sizing:border-box;}
+  .tabletop {margin-top: -10px;}
+  .mySlides {
+    display: none;
   }
-    .center-fit {
-        max-width:900;
-        width:100%;
-        height:100%;
-        object-fit: cover;
-        aspect-ratio : 1 / 1.5;
-        width:100%;
-        max-width: 300px;
-        border:0px;
-    }
-    .left-fit {
-        max-width:900px;
-        width:100%;
-        margin: left;
-    }
- 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    
-    .img1 {
-      width:100%;
-      max-width: 500px;
-      border:0px;
-    }
-  
-    .img2 {
-        width:100%;
-        object-fit: cover;
-        aspect-ratio : 2 / 1.2;
-    }
-    .img3 {
-      border-radius: 100px;
-      border-radius: 0px;
-      height:100px;
-      width:auto;
-    }
-    .img4 {
-      width:250px;
-      border:0px;
-    }
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #7a9b9e;
+    border-radius: 20%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active {
+    background-color: white;
+  }
 
-    .center {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    h2 {
-      font-family: Futura;
-      font-family: 'Lato', sans-serif;
-      font-weight: lighter;
-      color: #606468;
-      background: linear-gradient(#818689,#4d5155);
-      /* clip hackery */
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      font-size: 48px;
-      margin:0px;
-      margin-left:20px;
-    }
-
-    .tabletop {
-      margin-top: -10px;
-    }
-    .toppy {
-      margin-left:20px;
-      margin-bottom: -20px;
-      margin-top: 20px;
-    }
-    .title {
-      background: linear-gradient(#000000b1,#2f343600);
-      position: absolute;
-      color: white;
-      font-family: 'Noto', sans-serif;
-      font-weight: lighter;
-      font-size: 96px;
-      top: 0px;
-      width: 100%;
-      height: 100%;
-      left: 0px;
-      padding-left: 10px;
-      padding-right: 0px;
-    }
-
-    a {text-decoration: none;}
-    * {box-sizing:border-box}
-
-        .slideshow-container {
-        max-width: 900px;
-        position: relative;
-        margin: auto;
-        }
-
-        .mySlides {
-        display: none;
-        }
-        /* The dots/bullets/indicators */
-      .dot {
-        cursor: pointer;
-        height: 15px;
-        width: 15px;
-        margin: 0 2px;
-        background-color: #7a9b9e;
-        border-radius: 20%;
-        display: inline-block;
-        transition: background-color 0.6s ease;
-      }
-      @media (prefers-color-scheme: dark) {
-          .active {
-            background-color: white;
-          }
-        }
-        @media (prefers-color-scheme: light) {
-          .active {
-            background-color: black;
-          }
-        }
 </style>
   
 </head>
 <body>
+  <div id="body">
+    <div id="container">
 
-<div id="container">
+      <!-- Navbar -->
+      <table >
+        <tr>
+          <td>
+            <A HREF="index.html">
+              <h1 class="navtitle" style="color:white">HOME</h1>
+            </A>
+          </td>
+          <td>
+            <A HREF="commissions/commissions.html">
+              <h1 class="navtitle">COMMISSIONS</h1>
+            </A>
+          </td>
+          <td>
+            <A HREF="http://www.twitter.com/rinidisc">
+              <h1 class="navtitle">TWITTER</h1>
+            </A>
+          </td>
+          <td>
+            <A HREF="https://ko-fi.com/rinidisc">
+              <h1 class="navtitle">KO-FI</h1>
+            </A>
+          </td>
+        </tr>
+      </table>
+        
 
-
-          <!-- Slideshow container -->
-          <div class="slideshow-container">
-
-    <table >
-      <tr>
-        <td>
-          <A HREF="index.html">
-            <h1 class="navhome">HOME</h1>
-          </A>
-        </td>
-        <td>
-          <A HREF="commissions/commissions.html">
-            <h1 class="nav">COMMISSIONS</h1>
-          </A>
-        </td>
-        <td>
-          <A HREF="http://www.twitter.com/rinidisc">
-            <h1 class="nav">TWITTER</h1>
-          </A>
-        </td>
-        <td>
-          <A HREF="https://ko-fi.com/rinidisc">
-            <h1 class="nav">KO-FI</h1>
-          </A>
-        </td>
-      </tr>
-    </table>
-    
-  
-
-
-
-
+      <!-- Title -->
       <table>
             <tr><td>
-            <img src="profile_pic.png" class="img3">
-            </a>
+            <img src="profile_pic.png" class="img_pfp">
             </td><td>
             <h1>RINI<br>DISC</h1>
             </td></tr>
         </table>
 
+        <br></br>
 
 
-    <br></br>
-
-
-<!-- Slideshow -->
-        <div class="mySlides fade">
-          <img src="slide1.jpg" class="img2">
-        </div>
-        <div class="mySlides fade">
-            <img src="slide2.jpg" class="img2">
-          </div>
-          <div class="mySlides fade">
-            <img src="slide3.jpg" class="img2">
-          </div>
-
-          <div class="mySlides fade">
-            <img src="slide4.jpg" class="img2">
-          </div>
-
-          <div class="mySlides fade">
-            <img src="slide5.jpg" class="img2">
-          </div>
+      <!-- Slideshow -->
+      <div class="mySlides fade">
+        <img src="slide1.jpg" class="img_slideshow">
+      </div>
+      <div class="mySlides fade">
+        <img src="slide2.jpg" class="img_slideshow">
+      </div>
+      <div class="mySlides fade">
+        <img src="slide3.jpg" class="img_slideshow">
+      </div>
+      <div class="mySlides fade">
+        <img src="slide4.jpg" class="img_slideshow">
+      </div>
+      <div class="mySlides fade">
+        <img src="slide5.jpg" class="img_slideshow">
+      </div>
       <!-- The dots/circles -->
       <div style="text-align:center">
         <span class="dot" onclick="currentSlide(1)"></span>
@@ -316,129 +179,126 @@
         <span class="dot" onclick="currentSlide(4)"></span>
         <span class="dot" onclick="currentSlide(5)"></span>
       </div>
+      <br></br>
 
-
-    <br></br>
-    <h2>GALLERIES</h2>
-
-    <table class="tabletop">
+      <!-- Galleries -->
+      <h2>GALLERIES</h2>
+      <table class="tabletop">
         <tr>
-        <th><A HREF="commissions/commissions.html">
-            <img src="comms_title.png" alt="" class="img1">
-            </th>
-            <th><A HREF="2022/2022.html">
-                <img src="2022_title.png" alt="" class="img1" >
-              </th>
-              </tr>
-              <tr>
-          <th><A HREF="2021/2021.html">
-            <img src="2021_title.png" alt="" class="img1" >
+          <th>
+            <A HREF="commissions/commissions.html">
+            <img src="comms_title.png" alt="" class="img_gallery">
+            </A>
+          </th>
+          <th>
+            <A HREF="2022/2022.html">
+            <img src="2022_title.png" alt="" class="img_gallery">
+            </A>
           </th>
         </tr>
-        </table>
-
-
-        <br></br>
-       
-        <h2>PAGES</h2>
-
-        <table border="0" class="tabletop">
-            <div class="imgbox">
-                  <tr>
-                      <td><A HREF="original_characters/originalcharacters.html">
-                      <img src="original_characters_screen.png" alt="" class="img4">
-                  </A></td>
-                  <td>
-                    <p> <b>CHARACTERS</b> - OCs I've designed</p>
-                  </td>
-                </tr>
-                <tr>
-                    <td>
-                    <A HREF="tech/tech.html">
-                    <img src="tech_screen.png" alt="" class="img4">
-                    </a>
-                    </td><td>
-                      <p> <b>TECH</b> - Computers and gadgets</p>
-                    </td>
-               </tr>
-               <tr>
-                <td>
-                <A HREF="myze/myze.html">
-                <img src="myze_screen.png" alt="" class="img4">
-                </a>
-                </td><td>
-                <p><b>MYZE</b> - A game I worked on between 2016-2018</p>
-                </td>
-           </tr>
-             
-            </div>
-        </table>
-
-
-    
-    <br></br>
-    
-    <p>Art by Rinidisc</p>
-
-
-<table class=".center-fit">
-    <tr>
-      <th><A HREF="http://www.twitter.com/rinidisc">
-        <img src="twitter_logo.png" alt="" class=".left-fit" border=0 width=50 height=auto>
-      </th>
-      <th><A HREF="https://www.furaffinity.net/user/rinidisc/">
-        <img src="fa_logo.png" alt="" class=".left-fit" border=0 width=50 height=auto>
-      </th>
-      <th><A HREF="https://ko-fi.com/rinidisc">
-        <img src="kofi_logo.png" alt="" class=".left-fit" border=0 width=50 height=auto>
-      </th>
-      <th><A HREF="https://trello.com/b/vNuJsHkN/rinidisc">
-        <img src="trello_logo.png" alt="" class=".left-fit" border=0 width=50 height=auto>
-      </th>
-    </tr>
-    </table>
-    
-</div>
-</div>
-</div>
-
-
-
+        <tr>
+          <th>
+            <A HREF="2021/2021.html">
+            <img src="2021_title.png" alt="" class="img_gallery">
+            </A>
+          </th>
+        </tr>
+      </table>
+      <br></br>
+          
+      <!-- Pages -->
+      <h2>PAGES</h2>
+      <table class="tabletop">
+        <tr>
+          <td>
+            <A HREF="original_characters/originalcharacters.html">
+            <img src="original_characters_screen.png" class="img_page">
+            </A>
+          </td>
+          <td>
+            <p> <b>CHARACTERS</b> - OCs I've designed</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <A HREF="tech/tech.html">
+            <img src="tech_screen.png" class="img_page">
+            </A>
+          </td>
+          <td>
+            <p> <b>TECH</b> - Computers and gadgets</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <A HREF="myze/myze.html">
+            <img src="myze_screen.png" class="img_page">
+            </A>
+          </td>
+          <td>
+            <p><b>MYZE</b> - A game I worked on between 2016-2018</p>
+          </td>
+        </tr>
+      </table>
+      <br></br>
+        
+      <!-- Footer -->
+      <p>Art by Rinidisc</p>
+      <table>
+        <tr>
+          <th>
+            <A HREF="http://www.twitter.com/rinidisc">
+            <img src="twitter_logo.png" width=50 height=auto>
+            </A>
+          </th>
+          <th>
+            <A HREF="https://www.furaffinity.net/user/rinidisc/">
+            <img src="fa_logo.png" width=50 height=auto>
+            </A>
+          </th>
+          <th>
+            <A HREF="https://ko-fi.com/rinidisc">
+            <img src="kofi_logo.png" width=50 height=auto>
+            </A>
+          </th>
+          <th>
+            <A HREF="https://trello.com/b/vNuJsHkN/rinidisc">
+            <img src="trello_logo.png" width=50 height=auto>
+            </A>
+          </th>
+        </tr>
+      </table>
+      
+    </div>
+  </div>
 </body>
 </html>
-
-
 
 <script>
   let slideIndex = 0;
   showSlides(slideIndex, false);
 
-      // Thumbnail image controls
-     function currentSlide(n) {
-        showSlides(slideIndex = n-1, true);
-      }
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n-1, true);
+  }
 
-
-      function showSlides(n, click) {
-        let i;
-        let slides = document.getElementsByClassName("mySlides");
-        let dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        if (!click) { setTimeout(showSlides, 10000);}
-      }
-
-
-      
-
+  function showSlides(n, click) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    if (!click) { setTimeout(showSlides, 10000);}
+  }
 </script>
