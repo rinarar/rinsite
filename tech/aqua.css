@@ -1,0 +1,107 @@
+.aqua {
+    display:inline-block;
+    z-index: -1;
+    position:relative;
+    border:5pt;
+    padding: 6px 20px;
+    border-radius: 60px;
+    font-family: "Lucida Grande";
+    font-size: 13px;
+    text-shadow: 0px 2px 2px #728faf;
+    color: rgba(0,0,0,90%);
+    filter: blur(0.2px);
+    background: linear-gradient(180deg, #245ea2, #bce5ff);
+    box-shadow: 0px 5px 10px;
+    z-index: 10;
+    margin-right:12px;
+}
+.aqua:before {
+    content:" ";
+    display:block;
+    position:absolute;
+    top:1px;
+    left:4px;
+    right:4px;
+    bottom:15px;
+    filter: blur(0.2px);
+    border-radius: 300px 300px 80px 80px;
+    background: linear-gradient(180deg, rgba(204,208,232,1), rgba(125,174,221,1));
+    z-index: -1;
+}
+.aqua:after {
+    content:" ";
+    display:block;
+    position:absolute;
+    top:22px;
+    left:8px;
+    right:8px;
+    bottom:2px;
+    pacity: 50%;
+    filter: blur(1px);
+    border-radius:  400px 400px 400px 400px;
+    background: linear-gradient(180deg, #bde1ff, #cff8ff 60%);
+    z-index: 9;
+}
+.aqua:hover {
+    box-shadow: 0px 4px 5px;
+    bottom: -1px;
+}
+.aqua:active {
+    bottom: -1px;
+    opacity: 70%;
+    box-shadow: 0px 4px 5px;
+}
+
+.softqua {
+    display:inline-block;
+    z-index: -1;
+    position:relative;
+    border:5pt;
+    padding: 6px 20px;
+    border-radius: 60px;
+    font-family: "Lucida Grande";
+    font-size: 13px;
+    text-shadow: 0px 2px 2px #9c9c9c;
+    filter: blur(0.2px);
+    color: rgba(0,0,0,90%);
+    background: linear-gradient(180deg, #7a7a7a, #ffffff);
+    box-shadow: 0px 5px 10px;
+    z-index: 10;
+    margin-right:12px;
+}
+.softqua:before {
+    content:" ";
+    display:block;
+    position:absolute;
+    top:1px;
+    left:4px;
+    right:4px;
+    bottom:15px;
+    filter: blur(1.5px);
+    border-radius: 300px 300px 80px 80px;
+    background: linear-gradient(180deg, rgba(181,181,181,1), rgba(231,231,231,1));
+    z-index: -1;
+}
+.softqua:after {
+    content:" ";
+    display:block;
+    position:absolute;
+    top:22px;
+    left:8px;
+    right:8px;
+    bottom:2px;
+    opacity: 100%;
+    filter: blur(1px);
+    border-radius: 400px 400px 400px 400px;
+    background: linear-gradient(180deg, #eeeeee, #ffffff 60%);
+    z-index: 9;
+}
+.softqua:hover {
+    bottom: -1px;
+    box-shadow: 0px 4px 5px;
+}
+.softqua:active {
+    bottom: -1px;
+    opacity: 70%;
+    box-shadow: 0px 4px 5px;
+}
