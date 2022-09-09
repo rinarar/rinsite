@@ -55,7 +55,7 @@ h1 {
     color:rgb(0, 0, 0);
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
     .cards { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 900px) {
