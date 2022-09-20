@@ -1,3 +1,4 @@
+@import url(../rinsite/fonts/importfonts.css);
 body {
     background-color:#c6d0d7;
     margin:0px;
@@ -34,7 +35,7 @@ div#navbar {
     flex-wrap: wrap;
 }
 .navtitle {
-    font-family: 'Lato', sans-serif;
+    font-family: 'z_bold', sans-serif;
     color:#4e5153;
     font-weight: bold;
     letter-spacing: 0px;
@@ -51,9 +52,10 @@ img {
   border-radius: 20px;
 }
 h1 {
-    font-family: Futura;
-    font-size:48pt;
+    font-family: 'z_bold';
+    font-size:64pt;
     margin:0px;
+    margin-bottom:-12px;
     color:rgb(0, 0, 0);
 }
 
