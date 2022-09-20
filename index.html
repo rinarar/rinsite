@@ -49,7 +49,6 @@
   }
   .img_gallery {
     width:100%;
-    max-width: 500px;
   }
   .img_page { 
     width:100%;
@@ -64,17 +63,29 @@
     color:white;
   }
   h2 {
-    font-family: Futura;
     font-family: 'Lato', sans-serif;
     font-weight: lighter;
     color: #606468;
-    background: linear-gradient(#818689,#4d5155);
+    background: linear-gradient(#818689,#4e5153);
     /* clip hackery */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 48px;
     margin:0px;
     margin-left:20px;
+    margin-bottom:-8px;
+  }
+  h3 {
+    max-width:900px;
+    width:100%;
+    height:100%;
+    text-align: justify;
+    margin: 10px;
+    margin-bottom:-30px;
+    font-family: 'Noto', sans-serif;
+    font-weight: lighter;
+    color: #7a9b9e;
+    font-size: 48px;;
   }
   p {
     max-width:900px;
@@ -99,7 +110,6 @@
   }
   a { text-decoration: none;}
   * { box-sizing:border-box;}
-  .tabletop {margin-top: -10px;}
   .mySlides {
     display: none;
   }
@@ -115,6 +125,16 @@
   }
   .active {
     background-color: white;
+  }
+  @media (min-width: 700px) {
+    .cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .cards {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
   }
 
 </style>
@@ -184,32 +204,25 @@
 
       <!-- Galleries -->
       <h2>GALLERIES</h2>
-      <table class="tabletop">
-        <tr>
-          <th>
-            <A HREF="commissions/commissions.html">
-            <img src="comms_title.png" alt="" class="img_gallery">
-            </A>
-          </th>
-          <th>
-            <A HREF="2022/2022.html">
-            <img src="2022_title.png" alt="" class="img_gallery">
-            </A>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            <A HREF="2021/2021.html">
-            <img src="2021_title.png" alt="" class="img_gallery">
-            </A>
-          </th>
-        </tr>
-      </table>
+
+
+      <div class="cards">
+        <A HREF="commissions/commissions.html">
+          <img src="comms_title.png" alt="" class="img_gallery">
+        </A>
+        <A HREF="2022/2022.html">
+          <img src="2022_title.png" alt="" class="img_gallery">
+        </A>
+        <A HREF="2021/2021.html">
+          <img src="2021_title.png" alt="" class="img_gallery">
+        </A>
+      </div>
+
       <br></br>
           
       <!-- Pages -->
       <h2>PAGES</h2>
-      <table class="tabletop">
+      <table>
         <tr>
           <td>
             <A HREF="characters/characters.html">
@@ -217,7 +230,8 @@
             </A>
           </td>
           <td>
-            <p> <b>CHARACTERS</b> - OCs I've designed</p>
+            <h3>characters</h3><br>
+            <p>	&nbsp;&nbsp;original characters I've designed</p>
           </td>
         </tr>
         <tr>
@@ -227,7 +241,8 @@
             </A>
           </td>
           <td>
-            <p> <b>TECH</b> - Computers and gadgets</p>
+            <h3>tech</h3><br>
+            <p>	&nbsp;&nbsp;computers and gadget related art</p>
           </td>
         </tr>
         <tr>
@@ -237,7 +252,8 @@
             </A>
           </td>
           <td>
-            <p><b>MYZE</b> - A game I worked on between 2016-2018</p>
+            <h3>myze</h3><br>
+            <p>	&nbsp;&nbsp;a game I worked on between 2016-2018</p>
           </td>
         </tr>
       </table>
@@ -270,6 +286,8 @@
         </tr>
       </table>
       
+
+      <br></br>
     </div>
   </div>
 </body>
