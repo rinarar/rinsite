@@ -35,6 +35,7 @@ div#navbar {
     flex-wrap: wrap;
 }
 .navtitle {
+    font-family: 'Lato';
     font-family: 'z_bold', sans-serif;
     color:#4e5153;
     font-weight: bold;
