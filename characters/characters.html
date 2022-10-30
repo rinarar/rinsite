@@ -19,14 +19,26 @@
         margin:0px;
         min-height: 1000px;
     }
-    div#card {
-        max-width:600px;
+    div#container {
+        max-width:800px;
         width:100%;
+        margin: auto;
+        vertical-align:top;
+        padding-top:15px;
+        padding-bottom:5px;
+    }
+    div#card {
+        max-width:380px;
+        min-height:500px;
+        width:95%;
         background-color: #fdf1f0;
         margin: auto;
         vertical-align:top;
         border-radius: 35px;
         padding-top:15px;
+        padding-bottom:5px;
+        margin-bottom: 20px;
+        position:relative;
     }
     div#navbar {
         padding-top: 8px;
@@ -37,7 +49,8 @@
     .img_width {
         width:100%;
         object-fit: cover;
-        aspect-ratio : 2 / 1;
+        aspect-ratio : 2 / 1.2;
+        padding-bottom:0px;
     }
     .img_center {        
         display: block;
@@ -47,37 +60,43 @@
         border-radius: 25px;
     }
     h1 {
-        font-family: 'lato', sans-serif;
-        font-weight: bold;
+        font-family: 'Lato-Black', sans-serif;
         font-size: 30pt;
         color:black;
         text-align: center;
         margin:0px;
     }
     h2 {
-        font-family: 'lato', sans-serif;
-        font-weight: bold;
-        font-size: 22pt;
+        font-family: 'Lato-Black', sans-serif;
+        font-size: 14pt;
+        color:#464242;
+        text-align: center;
+        margin-top:0px;
+        margin-bottom: 14px;
+    }
+    h3 {
+        font-family: 'Lato-Bold', sans-serif;
+        font-size: 20pt;
         color:#464242;
         text-align: center;
         margin-top:0px;
         margin-bottom: 14px;
     }
     p {
-        font-family: 'lato', sans-serif;
+        font-family: 'Noto', sans-serif;
         font-size: 14pt;
         font-weight: normal;
         color:#464242;
         text-align: justify;
         margin-top:0px;
-        margin-bottom: 14px;   
+        margin-bottom: -20px;   
         padding-top:16px;
         padding-left:20px;
         padding-right:20px;
     }
     th, td { font-size: 14pt; font-weight: normal;}
     .navtitle {
-        font-family: 'lato', sans-serif;
+        font-family: 'Lato', sans-serif;
         color:#7a9b9e;
         font-weight: bold;
         letter-spacing: 0px;
@@ -89,6 +108,7 @@
     .center {
         margin-left: auto;
         margin-right: auto;
+        padding:0px;
     }
     a {text-decoration: none;}
     .button-1 {
@@ -99,13 +119,13 @@
         color: #FFFFFF;
         cursor: pointer;
         display: inline-block;
-        font-family: 'lato', sans-serif;
-        font-weight: normal;
+        font-family: 'Noto' sans-serif;
         font-size: 18px;
+        font-weight: 500;
         height: 40px;
         line-height: 20px;
         list-style: none;
-        margin: 0;
+        margin: 0px;
         outline: none;
         padding: 10px 16px;
         position: relative;
@@ -122,10 +142,34 @@
         display: flex;
         margin-top: 40px;
     }
-
-    .button-1:hover,
-    .button-1:focus {
+    .button-1:hover {
         background-color: #348e90;
+    }
+
+    @media (min-width: 800px) {
+        .cards { grid-template-columns: repeat(2, 1fr); }
+        div#container { max-width:800px;}
+    }
+    @media (min-width: 1200px) {
+        .cards { grid-template-columns: repeat(3, 1fr); }
+        div#container { max-width:1200px;}
+    }
+    @media (min-width: 1600px) {
+        .cards { grid-template-columns: repeat(4, 1fr); }
+        div#container { max-width:1600px;}
+    }
+
+    .cards {
+        max-width: 1600px;
+        margin: 0 auto;
+        display: grid;
+        gap: 1rem;
+    }
+    footer {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
     }
 </style>
 </head>
@@ -159,111 +203,173 @@
             </table>
         </div>
 
-        <br></br>
-        <div id="card">
-            <h1>SAMANTHA</h1>
-            <h2 style="color:#c62943">WOLF - 26 - CASHIER</h2>
-            <img src="samanthaBanner.jpg" class="img_width">
-            <p>
-                Samantha's the girl who leaned really hard into the whole goth thing back in highschool, but now it's just a subtle part of her aesthetic. She works at a Circle K as a cashier and drinks a lot.
-            </p>
-            <img src="samanthafull.jpg" class="img_center" style="width:75%">
+        <div id="container">
+            <h1 style="color:white" style="text-align:left">ORIGINAL CHARACTERS</h1>
+
+            <div class="cards">
+                <!--SAMANTHA-->
+                <div id="card">
+                    <h1 style="color:#c62943">SAMANTHA</h1>
+                    <h2 style="color:#c62943">WOLF - 26 -CASHIER</h2>
+                    <img src="samanthaBanner.jpg" class="img_width" style="object-position:83% 17%">
+                    <p>
+                        Samantha's the girl who leaned really hard into the whole goth thing back in highschool, but now it's just a sublet part of her aesthetic. She works at a Circle K as a cashier and drinks a lot.
+                    </p>
+                    <footer>
+                        <A HREF="samantha/cSamantha.html">
+                            <button class="button-1" role="button" style="background-color:#c62943">Read more</button>
+                        </A>
+                    </footer>
+                </div>
+                <!--DEER DYLAN-->
+                <div id="card">
+                    <h1 style="color:#cba238">DYLAN</h1>
+                    <h2 style="color:#cba238">DEER - 25<h2></h2>
+                    <img src="deerBanner.jpg" class="img_width" style="object-position:85% 15%">
+                    <p>
+                        Haven't drawn much of Dylan, but she's one of my favorite designs. She cuts her antlers down and yellow is her favorite color.
+                    </p>
+                    <footer>
+                        <A HREF="dylan/dylan.html">
+                            <button class="button-1" role="button" style="background-color:#cba238">Read more</button>
+                        </A>
+                    </footer>
+                </div>
+                <!--MYZE-->
+                <div id="card">
+                    <h1 style="color:#334d64">MYZE</h1>
+                    <h2 style="color:#334d64">ALIEN - AGE UNKNOWN<h2></h2>
+                    <img src="myzeBanner.jpg" class="img_width" style="object-position:85% 15%">
+                    <p>
+                        Myze is a protagonist created for a metroidvania game I worked on. She's an alien who had her mind wiped and now she has to save her homeworld from her sister who wants to destroy it.
+                    </p>
+                    <footer>
+                        <A HREF="../myze/myze.html">
+                            <button class="button-1" role="button" style="background-color:#334d64">Read more</button>
+                        </A>
+                    </footer>
+                </div>
+                 <!--KATIE-->
+                 <div id="card">
+                    <h1 style="color:#5f3bb9">KATIE</h1>
+                    <h2 style="color:#5f3bb9">COATI - 19 - STUDENT<h2></h2>
+                    <img src="coatieBanner.jpg" class="img_width" style="object-position:95% 5%">
+                    <p>
+                        Katie uses a Zune in 2022, that should tell you what kind of girl she is.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                <!--CatRin-->
+                <div id="card">
+                    <h1 style="color:#1173bc">RIN</h1>
+                    <h2 style="color:#1173bc">CAT - 29 - FURSONA<h2></h2>
+                    <img src="rincatBanner.jpg" class="img_width" style="object-position:85% 15%">
+                    <p>
+                        Persona I've been using in 2022.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                <!--ZOE-->
+                <div id="card">
+                    <h1 style="color:#496781">ZOE</h1>
+                    <h2 style="color:#496781">POSSUM - 26<h2></h2>
+                    <A HREF="../myze/myze.html">
+                        <img src="possumBanner.jpg" class="img_width" style="object-position:95% 5%">
+                    </A>
+                    <p>
+                        Possum girl.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                <!--RABBIT AND DEER-->
+                <div id="card">
+                    <h1 style="color:#5f3bb9">DEER & RABBIT</h1>
+                    <h2 style="color:#5f3bb9">DEER & RABBIT - 19 & 23<h2></h2>
+                    <img src="msShortTall.jpg" class="img_width" style="object-position:75% 25%">
+                    <p>
+                        Super short rabbit boy and his really tall doefriend.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                <!--SPRITE-->
+                <div id="card">
+                    <h1 style="color:#cba238">SPRITE</h1>
+                    <h2 style="color:#cba238">HUMAN - GAME PROTAGONIST<h2></h2>
+                    <img src="spriteBanner.jpg" class="img_width" style="object-position:95% 5%">
+                    <p>
+                        Protagonist for a game I've worked on now and then.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                 <!--KOBOLD-->
+                 <div id="card">
+                    <h1 style="color:#43605e">KOBOLD</h1>
+                    <h2 style="color:#43605e">KOBOLD - 20 - STUDENT<h2></h2>
+                    <img src="koboldBanner.jpg" class="img_width" style="object-position:85% 15%">
+                    <p>
+                        Kobold student. Not much to say about her.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                <!--MIKWA-->
+                <div id="card">
+                    <h1 style="color:#94c27d">MIKWA</h1>
+                    <h2 style="color:#94c27d">MIKWA<h2></h2>
+                    <img src="mikwaBanner.jpg" class="img_width" style="object-position:85% 15%">
+                    <p>
+                        Mikwa character I made for my first (and last) attempt at playing a tabletop game.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                <!--SEMPER-->
+                <div id="card">
+                    <h1 style="color:#cba238">SEMPER</h1>
+                    <h2 style="color:#cba238">DEER - 95<h2></h2>
+                    <img src="semperBanner.jpg" class="img_width" style="object-position:95% 5%">
+                    <p>
+                        Character for a book I was writing. 
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+                
+            </div>
+
             <br></br>
+            <h1 style="color:white" style="text-align:left">FANDOM CHARACTERS</h1>
+
+            <div class="cards">
+                <!--NAUA-->
+                <div id="card">
+                    <h1 style="color:#0095B6">NAUA</h1>
+                    <h2 style="color:#0095B6">OCTOLING - 24</h2>
+                        <img src="nuauBanner.jpg" class="img_width" style="object-position:95% 5%">
+                    <p>
+                        Octoling that I use in Splatoon 2 and 3. She wears a Manatee Swag Sweat and uses an octoshot (has upgraded to a heroshot replica). Salmon run wage slave and stuck in A rank hell.
+                    </p>
+                    <footer>
+                    </footer>
+                </div>
+            <!--GATORIN-->
+            <div id="card">
+                <h1 style="color:#1173bc">GATOMON RIN</h1>
+                <h2 style="color:#1173bc">GATOMON - DIGISONA<h2></h2>
+                <img src="gatorinBanner.jpg" class="img_width" style="object-position:50% 50%">
+                <p>
+                    Person I used around 2020 to 2021. Male gatomon that I usually used to represent myself visually.
+                </p>
+                <footer>
+                </footer>
+            </div>
+
         </div>
-
-        <br></br>
-        <div id="card">
-            <h1>KATIE</h1>
-            <h2 style="color:#5f3bb9">COATIE - 19 - STUDENT<h2>
-            <img src="coatieBanner.jpg" class="img_width">
-            <p>
-                Katie uses a Zune in 2022, that should tell you what kind of girl she is.
-            </p>
-            <br></br>
-        </div>
-
-
-        <br></br>
-        <div id="card">
-            <h1>NO ANTLER</h1>
-            <h2 style="color:#cba238">DEER<h2>
-            <img src="deerBanner.jpg" class="img_width">
-            <p>
-                I still need a name for her, but she's one of my favorite designs. She cuts her antlers down and yellow is her favorite color.
-            </p>
-            <img src="deerSocks.jpg" class="img_center" style="width:75%">
-            <br></br>
-        </div>
-
-        <br></br>
-        <div id="card">
-            <h1>MYZE</h1>
-            <h2 style="color:#334d64">ALIEN - AGE UNKNOWN</h2>
-            <img src="myze1.png" class="img_width">
-            <p>
-                Myze is a protagonist for a metroidvania game I worked on. She's an alien who had her mind wiped and now she has to save her homeworld from her sister who wants to destroy it.
-            </p>
-            <img src="myze_bench.gif" class="img_center" style="width:50%">
-            <A HREF="../myze/myze.html">
-                <button class="button-1" role="button">Read more about Myze</button>
-            </A>
-            <br></br>
-        </div>
-
-        <br></br>
-        <div id="card">
-            <h1>MISCELLANEOUS</h1>
-            <br></br>
-            <img src="msSprite.jpg" class="img_center" style="width:75%">
-            <p style="text-align:center">Sprite from a game concept I had.</p>
-            <br></br>
-            <table>
-                <tr>
-                    <th>
-                        <img src="msKobold.jpg" class="img_center" style="width:90%">
-                        <p style="text-align:center">Sleepy Kobold</p>
-                    </th>
-                    <th>
-                        <img src="msShortTall.jpg" class="img_center" style="width:90%">
-                        <p style="text-align:center">Short bnuuy and his super tall deer girlfriend</p>
-                    </th>
-                </tr>
-            </table>
-            <br></br>
-            <img src="msMikwa.jpg" class="img_center" style="width:75%">
-            <p style="text-align:center">A Mikwa I designed for a game of aether adrift that didn't go past the first session</p>
-            <br></br>
-            <img src="msProtogen.jpg" class="img_center" style="width:75%">
-            <p style="text-align:center">Not my first attempt at designing a protogen, but it's the first one I was somewhat happy with</p>
-            <br></br>
-            <table>
-                <tr>
-                    <th>
-                        <img src="msCat.jpg" class="img_center" style="width:90%">
-                        <p style="text-align:center">Cat protagonist for a game</p>
-                    </th>
-                    <th>
-                        <img src="msMagicat.jpg" class="img_center" style="width:90%">
-                        <p style="text-align:center">Magic girl cat based off a Dall-e generation</p>
-                    </th>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <th>
-                        <img src="msPossum.jpg" class="img_center" style="width:75%">
-                        <p style="text-align:center">Scraggly Possum</p>
-                    </th>
-                    <th>
-                        <img src="semper.jpg" class="img_center" style="width:75%">
-            <p style="text-align:center">Semper the Kor'</p>
-                    </th>
-                </tr>
-            </table>
-            <br></br>
-            
-        </div>
-
     <br></br>
     </div>
 </body>
